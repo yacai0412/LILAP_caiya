@@ -3,6 +3,39 @@ Low-input Low-cost amplification-free library-production method for PacBio Long-
 
 All the code for 3L-seq are available in code.sh, please install the softwares with correct version mentioned in the article
 
+## Outline
+- [3L-seq](#3l-seq)
+  * [code.sh](#codesh)
+    + [ccs reads length distribution](#ccs-reads-length-distribution)
+    + [Tn5 insertion site bias](#tn5-insertion-site-bias)
+    + [ccs concensus](#ccs-concensus)
+    + [relative depth](#relative-depth)
+    + [GC bias](#gc-bias)
+    + [assembly](#assembly)
+      - [downsampling](#downsampling)
+      - [hifiasm](#hifiasm)
+      - [quast](#quast)
+      - [BUSCO v5.4.2](#busco-v542)
+      - [merqury calculate qv](#merqury-calculate-qv)
+        * [calculate best kmer size](#calculate-best-kmer-size)
+        * [build k-mer dbs with meryl](#build-k-mer-dbs-with-meryl)
+        * [calculate qv by merqury](#calculate-qv-by-merqury)
+    + [polish](#polish)
+    + [Y chromosome identification](#y-chromosome-identification)
+    + [SV calling](#sv-calling)
+    + [non-B DNA detection](#non-b-dna-detection)
+    + [SNP calling](#snp-calling)
+      - [snpEff](#snpeff)
+      - [get genome background bed](#get-genome-background-bed)
+      - [verification and vaf filter of SNPs](#verification-and-vaf-filter-of-snps)
+      - [MNP detecting](#mnp-detecting)
+    + [Wolbachia & other bacteria](#wolbachia---other-bacteria)
+      - [blobtools](#blobtools)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+
 
 
 ## code.sh 
