@@ -81,8 +81,7 @@ falconc bam-filter-clipped -F=0x104 -t --output-count-fn=C01.ccs.cut19bp.pasm.so
 C01.ccs.cut19.fasta \
 C01.ccs.cut19bp.pasm.sort.falconcF104.sam \
 C01.asm.p_ctg.fa \
--L C01.asm.p_ctg.racon.fa \
-> C01.asm.p_ctg.racon.fa
+-L C01.asm.p_ctg.racon.fa > C01.asm.p_ctg.racon.fa
 
 jellyfish count -m 19 -t 10 -s 10000000000 -C C01.ccs.cut19.fasta -o C01.ccs.cut19.fasta.jf
 jellyfish histo -t 10 C01.ccs.cut19.fasta.jf > C01.ccs.cut19.fasta.histo
@@ -138,9 +137,13 @@ java -jar snpEff.jar BDGP6.32.105 -i vcf pav_c01.txt -csvStats pav_c01.txt.ann.c
 
 #### get genome background bed
 cat rmsk.txt | awk '{ss=$7+1; ee=$8; if({if(($6=="chr2L" || $6=="chr2R" || $6=="chr3L" || $6=="chr3R" || $6=="chr4" || $6=="chrX" || $6=="chrY") && ($12=="Satellite")){print $6"\t"ss"\t"ee"\t"$12}}' | bedtools sort | bedtools merge | awk '{print $0"\tSatellite"}' > dm6.rmsk.Satellite.s.merge.bed
+
 cat rmsk.txt | awk '{ss=$7+1; ee=$8; if({if(($6=="chr2L" || $6=="chr2R" || $6=="chr3L" || $6=="chr3R" || $6=="chr4" || $6=="chrX" || $6=="chrY") && ($12=="tSimple_repeat")){print $6"\t"ss"\t"ee"\t"$12}}' | bedtools sort | bedtools merge | awk '{print $0"\tSimple_repeat"}' > dm6.rmsk.Simple_repeat.s.merge.bed
+
 cat rmsk.txt | grep -v "#" | awk '{if(($6=="chr2L" || $6=="chr2R" || $6=="chr3L" || $6=="chr3R" || $6=="chr4" || $6=="chrX" || $6=="chrY") && ($12=="LTR" || $12=="LINE" || $12=="SINE" || $12=="DNA" || $12 == "RC")){print $6"\t"$7"\t"$8"\tTE"}}' | awk '{ss=$2-50; ee=$3+50; print $1"\t"ss"\t"ee}' | bedtools sort | bedtools merge | awk '{print $0"\tTE"}' > dm6.TE.s.merge.50bp.s.merge.bed
+
 cat simple_repeat.tsv | grep -v "#" | awk '{ss=$3+1; ee=$4; print $2"\t"ss"\t"ee"\tTRF"}' | bedtools sort | bedtools merge | awk '{print $0"\tSimple_repeat"}' > dm6.simple_repeat.trf.s.merge.bed
+
 cat dm6.rmsk.Satellite.s.merge.bed dm6.rmsk.Simple_repeat.s.merge.bed dm6.TE.s.merge.50bp.s.merge.bed dm6.simple_repeat.trf.s.merge.bed | awk '{print $1"\t"$2"\t"$3}' | bedtools sort | bedtools merge > dm6.TE.s.merge.50bp.s.merge.simple_repeat.trf.s.merge.rmsk.Satellite_Simple_repeat.merge.bed
 
 #### verification and vaf filter of SNPs
@@ -202,11 +205,11 @@ diamond blastx \
         --threads 16 \
         > C01.diamond.blastx.out
 
-./blobtools2/blobtools create \
+blobtools create \
     --fasta C01.ccs.cut19.fasta \
     --meta C01create.yaml \
     C01
 
-./blobtools2/blobtools view --remote C01
+blobtools view --remote C01
 
 
