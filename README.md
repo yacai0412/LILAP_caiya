@@ -116,10 +116,10 @@ rm C01.ccs.cut19bp.pasm.sam
 falconc bam-filter-clipped -F=0x104 -t --output-count-fn=C01.ccs.cut19bp.pasm.sort.bam.filtered_aln_count.txt --output-fn=C01.ccs.cut19bp.pasm.sort.falconcF104.sam --input-fn=C01.ccs.cut19bp.pasm.sort.bam
 
 
-/softwares/racon_liftover/build/bin/racon -t 20 \\
-C01.ccs.cut19.fasta \\
-C01.ccs.cut19bp.pasm.sort.falconcF104.sam \\
-C01.asm.p_ctg.fa \\
+/softwares/racon_liftover/build/bin/racon -t 20 /\
+C01.ccs.cut19.fasta /\
+C01.ccs.cut19bp.pasm.sort.falconcF104.sam /\
+C01.asm.p_ctg.fa /\
 -L C01.asm.p_ctg.racon.fa > C01.asm.p_ctg.racon.fa
 
 
