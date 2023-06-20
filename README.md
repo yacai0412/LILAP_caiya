@@ -7,10 +7,11 @@ All the code for 3L-seq are available in code.sh, please install the softwares w
 
 ## code.sh 
 ### ccs reads length distribution
+```sh
 cat C01.subreads.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.subreads.cut19.fasta.length
 
 cat C01.ccs.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.ccs.cut19.fasta.length
-
+```
 
 
 ### Tn5 insertion site bias
