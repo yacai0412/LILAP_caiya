@@ -130,10 +130,10 @@ rm C01.ccs.cut19bp.pasm.sam
 falconc bam-filter-clipped -F=0x104 -t --output-count-fn=C01.ccs.cut19bp.pasm.sort.bam.filtered_aln_count.txt --output-fn=C01.ccs.cut19bp.pasm.sort.falconcF104.sam --input-fn=C01.ccs.cut19bp.pasm.sort.bam
 
 
-/softwares/racon_liftover/build/bin/racon -t 20 /\
-C01.ccs.cut19.fasta /\
-C01.ccs.cut19bp.pasm.sort.falconcF104.sam /\
-C01.asm.p_ctg.fa /\
+/softwares/racon_liftover/build/bin/racon -t 20 \
+C01.ccs.cut19.fasta \
+C01.ccs.cut19bp.pasm.sort.falconcF104.sam \
+C01.asm.p_ctg.fa \
 -L C01.asm.p_ctg.racon.fa > C01.asm.p_ctg.racon.fa
 
 
@@ -145,12 +145,12 @@ genomescope2 -i C01.ccs.cut19.fasta.histo -o genomescope2_output -k 19
 
 
 merfin -polish \
--sequence C01.asm.p_ctg.fa /\
--seqmers C01.asm.p_ctg.meryl /\
--readmers C01.ccs.cut19.meryl /\
--peak 30.3  /\
--vcf C01.asm.p_ctg.racon.fa.vcf /\
--output C01.asm.p_ctg.fa.merfin.out /\
+-sequence C01.asm.p_ctg.fa \
+-seqmers C01.asm.p_ctg.meryl \
+-readmers C01.ccs.cut19.meryl \
+-peak 30.3  \
+-vcf C01.asm.p_ctg.racon.fa.vcf \
+-output C01.asm.p_ctg.fa.merfin.out \
 -threads 20
 ```
 
