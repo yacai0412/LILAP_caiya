@@ -131,12 +131,12 @@ genomescope2 -i C01.ccs.cut19.fasta.histo -o genomescope2_output -k 19
 
 
 merfin -polish \
--sequence C01.asm.p_ctg.fa \
--seqmers C01.asm.p_ctg.meryl \
--readmers C01.ccs.cut19.meryl \
--peak 30.3  \
--vcf C01.asm.p_ctg.racon.fa.vcf \
--output C01.asm.p_ctg.fa.merfin.out \
+-sequence C01.asm.p_ctg.fa /\
+-seqmers C01.asm.p_ctg.meryl /\
+-readmers C01.ccs.cut19.meryl /\
+-peak 30.3  /\
+-vcf C01.asm.p_ctg.racon.fa.vcf /\
+-output C01.asm.p_ctg.fa.merfin.out /\
 -threads 20
 
 
@@ -277,28 +277,28 @@ dnadiff -p wMel2C01asm -d wMel2C01asm.delta
 
 
 #### blobtools
-blastn -db /blobtoolkit/nt \
-       -query C01.ccs.cut19.fasta \
-       -outfmt "6 qseqid staxids bitscore std" \
-       -max_target_seqs 10 \
-       -max_hsps 1 \
-       -evalue 1e-25 \
-       -num_threads 16 \
+blastn -db /blobtoolkit/nt /\
+       -query C01.ccs.cut19.fasta /\
+       -outfmt "6 qseqid staxids bitscore std" /\
+       -max_target_seqs 10 /\
+       -max_hsps 1 /\
+       -evalue 1e-25 /\
+       -num_threads 16 /\
        -out C01.ncbi.blastn.out
 
-diamond blastx \
-        --query C01.ccs.cut19.fasta \
-        --db /blobtoolkit/uniprot \
-        --outfmt 6 qseqid staxids bitscore qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore \
-        --sensitive \
-        --max-target-seqs 1 \
-        --evalue 1e-25 \
-        --threads 16 \
+diamond blastx /\
+        --query C01.ccs.cut19.fasta /\
+        --db /blobtoolkit/uniprot /\
+        --outfmt 6 qseqid staxids bitscore qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore /\
+        --sensitive /\
+        --max-target-seqs 1 /\
+        --evalue 1e-25 /\
+        --threads 16 /\
         > C01.diamond.blastx.out
 
-blobtools create \
-    --fasta C01.ccs.cut19.fasta \
-    --meta C01create.yaml \
+blobtools create /\
+    --fasta C01.ccs.cut19.fasta /\
+    --meta C01create.yaml /\
     C01
 
 blobtools view --remote C01
