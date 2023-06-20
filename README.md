@@ -32,8 +32,6 @@ All the code for 3L-seq are available in code.sh, please install the softwares w
     + [Wolbachia & other bacteria](#wolbachia---other-bacteria)
       - [blobtools](#blobtools)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 
 
