@@ -8,6 +8,7 @@ All the code for 3L-seq are available in code.sh, please install the softwares w
 ## code.sh 
 ### ccs reads length distribution
 cat C01.subreads.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.subreads.cut19.fasta.length
+
 cat C01.ccs.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.ccs.cut19.fasta.length
 
 
@@ -17,8 +18,11 @@ perl Perl-10.pl
 
 ### ccs concensus
 python3 ccs_circle.count.final.py C01.ccs.cut19.fasta C01.subreads.cut19.fasta C01
+
 minimap2 -ax map-hifi --MD --eqx --secondary=no -t 10 C01.asm.p_ctg.fa C01.ccs.cut19.fasta | samtools view -F4 -F0x900 > C01.ccs.vs.asm.eqx.F4F0x900.sam
+
 python3 rmdup.py C01
+
 python3 ccs_identity.final.py C01.ccs.vs.asm.eqx.F4F0x900.rmdup.sam 
 
 
