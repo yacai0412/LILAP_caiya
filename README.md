@@ -15,19 +15,18 @@ cat C01.ccs.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rnam
 
 
 ### Tn5 insertion site bias
+```sh
 perl Perl-10.pl
-
+```
 
 
 ### ccs concensus
+```sh
 python3 ccs_circle.count.final.py C01.ccs.cut19.fasta C01.subreads.cut19.fasta C01
-
 minimap2 -ax map-hifi --MD --eqx --secondary=no -t 10 C01.asm.p_ctg.fa C01.ccs.cut19.fasta | samtools view -F4 -F0x900 > C01.ccs.vs.asm.eqx.F4F0x900.sam
-
 python3 rmdup.py C01
-
 python3 ccs_identity.final.py C01.ccs.vs.asm.eqx.F4F0x900.rmdup.sam 
-
+```
 
 
 ### relative depth
