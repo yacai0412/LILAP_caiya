@@ -1,10 +1,10 @@
-# Lilap
+# LILAP
 Low-input Low-cost amplification-free library-production method for PacBio Long-read sequencing
 
 All the code for 3L-seq are available in code.sh, please install the softwares with correct version mentioned in the article
 
 ## Outline
-- [Lilap](#Lilap)
+- [LILAP](#LILAP)
   * [code.sh](#codesh)
     + [ccs reads length distribution](#ccs-reads-length-distribution)
     + [Tn5 insertion site bias](#tn5-insertion-site-bias)
