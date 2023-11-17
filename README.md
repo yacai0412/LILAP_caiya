@@ -1,7 +1,7 @@
 # LILAP
 Low-input Low-cost amplification-free library-production method for PacBio Long-read sequencing
 
-All the code for LILAP are available in code.sh, please install the softwares with correct version mentioned in the article
+All the codes for LILAP are available in code.sh, please install the software with correct version mentioned in the article
 
 single fly genome (and Wolbachia) assembly file:
 
@@ -15,7 +15,7 @@ wISO1-2: https://drive.google.com/file/d/1IjXDbNlbdbVfbI8CDNQcFazp7PgJY5Yb/view?
 
 
 The codes for SVs and SNPs can be tested by the single fly genome assembly and Wolbachia genome assembly.
-Some of the raw results need futher manual check (see manuscript), all the pipeline and manual check need few days for one single fly genome assembly.
+Some of the raw results need further manual check (see manuscript), all the pipeline and manual check need few days for one single fly genome assembly.
 
 ## Outline
 - [LILAP](#LILAP)
