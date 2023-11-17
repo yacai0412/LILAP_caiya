@@ -36,7 +36,8 @@ All the code for LILAP are available in code.sh, please install the softwares wi
 
 
 
-## code.sh 
+## Usage
+git clone all the codes, and run the code as below
 ### ccs reads length distribution
 ```sh
 cat C01.subreads.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.subreads.cut19.fasta.length
