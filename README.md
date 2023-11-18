@@ -1,7 +1,7 @@
 # LILAP
 Low-input Low-cost amplification-free library-production method for PacBio Long-read sequencing
 
-All the codes for LILAP are available in the 'code.sh' file. Kindly ensure the installation of the software is conducted with the correct versions specified in the accompanying article.
+All the codes for LILAP are available in the 'code.sh' file. The installation of the software should be conducted with the correct versions specified in the accompanying paper.
 
 Links for the single-fly genome (and Wolbachia) assemblies:
 
@@ -17,14 +17,12 @@ All PacBio HiFi sequencing data generated in this study are available at the NCB
 
 
 ## Usage
-git clone all the codes, and run the following codes on the linux server. The software used in this research can be found in requirements.txt.
+Git clone all the codes, and run the following codes on the Linux server. The necessary software for this research is detailed in the "requirements.txt" file.
 
 ## data for testing
-Assembly code can be tested by both ISO1-1 and ISO1-2 ccs reads with following codes.
+Test the assembly code using both ISO1-1 and ISO1-2 ccs reads with the provided instructions.
 
-The codes for SVs and SNPs can undergo testing using both the single-fly and Wolbachia genome assemblies. The expected structural variation output results are in the sv.C01.ccs.hifiasm.txt file.
-Please note that certain raw results require additional manual verification, as detailed in the manuscript. 
-The entire pipeline, along with the manual checking process, needs a few days for analysis of the single-fly genome assembly.
+For SVs and SNPs, utilize both the single-fly and Wolbachia genome assemblies. Examine the anticipated structural variation results in the sv.C01.ccs.hifiasm.txt file. It's important to note that some raw results necessitate additional manual verification, as elaborated in the manuscript. The complete pipeline, including the manual checking process, requires a few days for the analysis of the single-fly genome assembly.
 
 
 ## Outline
