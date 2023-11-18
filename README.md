@@ -1,9 +1,9 @@
 # LILAP
 Low-input Low-cost amplification-free library-production method for PacBio Long-read sequencing
 
-All the codes for LILAP are available in code.sh, please install the software with correct version mentioned in the article
+All the codes for LILAP are available in the 'code.sh' file. Kindly ensure the installation of the software is conducted with the correct versions specified in the accompanying article.
 
-single fly genome (and Wolbachia) assembly file:
+Links for the single-fly genome (and Wolbachia) assemblies:
 
 ISO1-1: https://drive.google.com/file/d/1-BD99hcTxMuByG2PVFB0xjcttYHY1gKu/view?usp=drive_link
 
@@ -14,8 +14,11 @@ wISO1-1: https://drive.google.com/file/d/1f2nLqUaaNm7orrgbCTvWwSh3s43uYKLr/view?
 wISO1-2: https://drive.google.com/file/d/1IjXDbNlbdbVfbI8CDNQcFazp7PgJY5Yb/view?usp=drive_link
 
 
-The codes for SVs and SNPs can be tested by the single fly genome assembly and Wolbachia genome assembly.
-Some of the raw results need further manual check (see manuscript), all the pipeline and manual check need few days for one single fly genome assembly.
+
+The codes for SVs and SNPs can undergo testing using both the single-fly and Wolbachia genome assemblies. 
+Please note that certain raw results require additional manual verification, as detailed in the manuscript. 
+The entire pipeline, along with the manual checking process, needs a few days for analysis of the single-fly genome assembly.
+
 
 ## Outline
 - [LILAP](#LILAP)
@@ -51,8 +54,9 @@ Some of the raw results need further manual check (see manuscript), all the pipe
 
 
 ## Usage
-git clone all the codes, and run the code as below
-### ccs reads length distribution
+git clone all the codes, and run the following codes: 
+
+### ccs read length distribution
 ```sh
 cat C01.subreads.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rname]+length($0)}}END{for(rname in all){print all[rname]}}' > C01.subreads.cut19.fasta.length
 
@@ -66,7 +70,7 @@ perl Perl-10.pl
 ```
 
 
-### ccs concensus
+### ccs consensus
 ```sh
 python3 ccs_circle.count.final.py C01.ccs.cut19.fasta C01.subreads.cut19.fasta C01
 
@@ -160,7 +164,7 @@ merqury.sh C01.ccs.cut19bp.k18.merge.meryl C01.ccs.cut19bp.asm.p_ctg.fa C01.ccs.
 ```
 
 
-### polish
+### polishing
 ```sh
 meryl count k=15 C01.ccs.cut19bp.asm.p_ctg.fa output C01_lDB
 
@@ -242,7 +246,7 @@ perl Perl-14.pl
 ```
 
 
-### non-B DNA detection
+### non-B DNA motif detection
 ```sh
 cat TE_insertion_all.all.bed | awk '{print $1"\t"$2-1001"\t"$3+1000}' > TE_insertion_all.all.2000.bed
 
