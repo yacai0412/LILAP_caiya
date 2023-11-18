@@ -54,7 +54,7 @@ The entire pipeline, along with the manual checking process, needs a few days fo
 
 
 ## Usage
-git clone all the codes, and run the following codes: 
+git clone all the codes, and run the following codes on the linux server. The software used in this research can be found in requirements.txt.
 
 ## data for testing
 Assembly code can be tested by both ISO1-1 and ISO1-2 ccs reads with following codes.
