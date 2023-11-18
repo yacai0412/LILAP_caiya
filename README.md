@@ -15,7 +15,14 @@ wISO1-2: https://drive.google.com/file/d/1IjXDbNlbdbVfbI8CDNQcFazp7PgJY5Yb/view?
 
 All PacBio HiFi sequencing data generated in this study are available at the NCBI Sequence Read Archive database (https://www.ncbi.nlm.nih.gov/sra) under the accession numbers PRJNA983717.
 
-The codes for SVs and SNPs can undergo testing using both the single-fly and Wolbachia genome assemblies. 
+
+## Usage
+git clone all the codes, and run the following codes on the linux server. The software used in this research can be found in requirements.txt.
+
+## data for testing
+Assembly code can be tested by both ISO1-1 and ISO1-2 ccs reads with following codes.
+
+The codes for SVs and SNPs can undergo testing using both the single-fly and Wolbachia genome assemblies. The expected structural variation output results are in the sv.C01.ccs.hifiasm.txt file.
 Please note that certain raw results require additional manual verification, as detailed in the manuscript. 
 The entire pipeline, along with the manual checking process, needs a few days for analysis of the single-fly genome assembly.
 
@@ -51,14 +58,6 @@ The entire pipeline, along with the manual checking process, needs a few days fo
 
 
 
-
-
-## Usage
-git clone all the codes, and run the following codes on the linux server. The software used in this research can be found in requirements.txt.
-
-## data for testing
-Assembly code can be tested by both ISO1-1 and ISO1-2 ccs reads with following codes.
-The structural variation detection test can use the assembly results of ISO1-1. The expected structural variation output results are in the sv.C01.ccs.hifiasm.txt file.
 
 
 ### ccs read length distribution
