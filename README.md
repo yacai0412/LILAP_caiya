@@ -68,7 +68,7 @@ cat C01.ccs.cut19.fasta | awk '{if($0 ~ /^>/){rname=$0} else{all[rname]=all[rnam
 
 ### Tn5 insertion site bias
 ```sh
-perl Perl-10.pl
+perl Tn5_insertion_site_bias.pl
 ```
 
 
@@ -97,19 +97,19 @@ samtools depth -a C01.ccs.cut19bp.fq.dm6.F904.s.bam > C01.ccs.cut19bp.fq.dm6.F90
 rm C01.ccs.cut19bp.fq.dm6.F904.bam
 
 
-perl Perl-2.pl
+perl relative_depth_1.pl
 
-perl Perl-13.pl
+perl relative_depth_2.pl
 
-perl Perl-12.pl
+perl relative_depth_3.pl
 ```
 
 
 ### GC bias
 ```sh
-perl Perl-10_3.pl C01.ccs.cut19bp.fq.dm6.F904.s.depth C01.ccs ccs
+perl GC_bias_1.pl C01.ccs.cut19bp.fq.dm6.F904.s.depth C01.ccs ccs
 
-perl Perl-10_4.pl C01.ccs.500.dgc C01.ccs.500.dgc1 ccs
+perl GC_bias_2.pl C01.ccs.500.dgc C01.ccs.500.dgc1 ccs
 ```
 
 
@@ -244,7 +244,7 @@ lastz dm6.fa[multiple] C01.ccs.cut19bp.asm.p_ctg.fa[multiple] --chain --format=g
 
 svmu dm62C01.delta dm6.fa C01.ccs.cut19bp.asm.p_ctg.fa h dm62C01_lastz.txt C01.ccs.hifiasm 
 
-perl Perl-14.pl
+perl SV_results_filter.pl
 ```
 
 
