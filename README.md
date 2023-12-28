@@ -166,7 +166,7 @@ merqury.sh C01.ccs.cut19bp.k18.merge.meryl C01.ccs.cut19bp.asm.p_ctg.fa C01.ccs.
 ```
 
 
-### polishing
+### polish
 ```sh
 meryl count k=15 C01.ccs.cut19bp.asm.p_ctg.fa output C01_lDB
 
