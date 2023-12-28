@@ -1,7 +1,7 @@
 bwa
 minimap2
 ccs
-hifiasm=2.17
+hifiasm=0.12
 racon=1.6.0
 merfin=v1.1
 bcftools
